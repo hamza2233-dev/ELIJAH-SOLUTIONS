@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Verticals & Offers | Elijay Performance Partners</title>
+<meta name="description" content="Browse active pay-per-call and live transfer campaigns across Medicare, Final Expense, Auto, and Home Services.">
+<link rel="icon" type="image/png" href="assets/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="index.html" class="logo">
+      <span class="logo-mark"><img src="assets/logo-mark.png" alt="" width="38" height="38"></span>
+      <span class="logo-text">Elijay Performance Partners<small>PAY-PER-CALL &amp; LIVE TRANSFER</small></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="verticals.html">Verticals</a>
+      <a href="why-us.html">Why Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="submit-offer.html" class="btn btn-ghost btn-sm">Submit an Offer</a>
+      <button class="btn btn-outline-emerald btn-sm" id="openAdminBtn" type="button">Admin Portal</button>
+      <button class="burger" id="burgerBtn" type="button" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="verticals.html">Verticals</a>
+    <a href="why-us.html">Why Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="submit-offer.html">Submit an Offer</a>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap page-hero-inner">
+      <span class="eyebrow"><span class="dot"></span> Active Campaigns</span>
+      <h1>Live Verticals &amp; Offers</h1>
+      <p>Every campaign below is actively buying calls right now. Payouts and geo-targeting update in real time as buyer demand shifts.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="offers-grid" id="offersGrid"></div>
+      <div class="cta-banner reveal" style="margin-top:56px;">
+        <span class="eyebrow">Buyers &amp; Publishers</span>
+        <h2>Don't See Your Vertical?</h2>
+        <p>Buyers can propose a new campaign and payout for review. Publishers can apply for access to any live offer above.</p>
+        <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:8px;">
+          <a href="submit-offer.html" class="btn btn-primary">Submit an Offer</a>
+          <a href="contact.html" class="btn btn-outline-emerald">Apply as a Publisher</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-col footer-brand" style="flex:1; min-width:260px;">
+        <a href="index.html" class="footer-logo-lockup">
+          <img src="assets/logo-full.png" alt="Elijay Performance Partners" height="72">
+        </a>
+        <p>A performance marketing network specializing in compliant, real-time pay-per-call and live transfer routing between vetted publishers and buyers.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="why-us.html">Why Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Verticals</h5>
+        <ul>
+          <li><a href="verticals.html">Medicare</a></li>
+          <li><a href="verticals.html">Final Expense</a></li>
+          <li><a href="verticals.html">Auto</a></li>
+          <li><a href="verticals.html">Home Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Partners</h5>
+        <ul>
+          <li><a href="submit-offer.html">Submit an Offer</a></li>
+          <li><a href="contact.html">Become a Publisher</a></li>
+          <li><a href="#" id="openAdminBtnFooter">Admin Portal</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Elijay Performance Partners. All rights reserved.</span>
+      <span>TCPA-Aligned Network Partner</span>
+    </div>
+    <p class="footer-legal">Elijay Performance Partners operates as a call aggregation and routing network. All publishers and buyers are independently responsible for compliance with applicable federal and state telemarketing, TCPA, and licensing regulations within their respective verticals. Payout figures shown are representative and subject to change based on live buyer demand, geo-targeting, and call quality scoring. This site does not constitute a guarantee of call volume, payout, or campaign availability.</p>
+  </div>
+</footer>
+
+<!-- PIN MODAL -->
+<div class="modal-overlay" id="pinOverlay">
+  <div class="modal">
+    <div class="modal-head">
+      <h3>Admin Portal</h3>
+      <button class="modal-close" id="closePinModal" aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <p style="color:var(--gray); font-size:13.5px; text-align:center; margin:0;">Enter your 4-digit PIN to manage live offers.</p>
+    <div class="pin-dots" id="pinDots">
+      <div class="pin-dot"></div><div class="pin-dot"></div><div class="pin-dot"></div><div class="pin-dot"></div>
+    </div>
+    <div class="pin-error" id="pinError">&nbsp;</div>
+    <div class="pin-keypad">
+      <button class="pin-key" data-key="1">1</button>
+      <button class="pin-key" data-key="2">2</button>
+      <button class="pin-key" data-key="3">3</button>
+      <button class="pin-key" data-key="4">4</button>
+      <button class="pin-key" data-key="5">5</button>
+      <button class="pin-key" data-key="6">6</button>
+      <button class="pin-key" data-key="7">7</button>
+      <button class="pin-key" data-key="8">8</button>
+      <button class="pin-key" data-key="9">9</button>
+      <button class="pin-key wide" data-key="clear">Clear</button>
+      <button class="pin-key" data-key="0">0</button>
+      <button class="pin-key wide" data-key="back">&larr;</button>
+    </div>
+    <p class="pin-hint">Default PIN: 1122 — change this in app.js before going live.</p>
+  </div>
+</div>
+
+<!-- ADMIN DASHBOARD MODAL -->
+<div class="modal-overlay" id="dashOverlay">
+  <div class="modal wide">
+    <div class="modal-head">
+      <h3>Offer Management</h3>
+      <button class="modal-close" id="closeDashModal" aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="admin-header-row">
+      <span class="admin-tag"><span style="width:6px;height:6px;border-radius:50%;background:var(--emerald-hover);display:inline-block;"></span> Connected to live feed</span>
+      <div style="display:flex; gap:10px;">
+        <a href="/admin/leads" target="_blank" rel="noopener" class="btn btn-outline-emerald btn-sm">View Submitted Leads</a>
+        <button class="btn btn-ghost btn-sm" id="logoutAdminBtn" type="button">Log Out</button>
+      </div>
+    </div>
+
+    <div class="storage-note">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+      <span>Offers are stored in the live database. When you add or remove a campaign here, every visitor's Home and Verticals pages update in real time.</span>
+    </div>
+
+    <div class="admin-grid">
+      <div>
+        <div class="admin-section-label">Add New Offer</div>
+        <form id="addOfferForm">
+          <div class="field">
+            <label for="oTitle">Title</label>
+            <input id="oTitle" type="text" placeholder="e.g. Medicare Advantage" required>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="oPayout">Payout</label>
+              <input id="oPayout" type="text" placeholder="$45 - $65" required>
+            </div>
+            <div class="field">
+              <label for="oGeo">Geo-Targeting</label>
+              <input id="oGeo" type="text" placeholder="US Nationwide" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="oDesc">Description</label>
+            <textarea id="oDesc" placeholder="Short description of the campaign, call requirements, and quality bar."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Add Offer to Live Feed</button>
+        </form>
+      </div>
+      <div>
+        <div class="admin-section-label">Current Live Offers</div>
+        <div id="adminOfferList"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
